@@ -1,0 +1,135 @@
+﻿@model RXcx03._07.Models.AtriclList
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Plug_ing/jQueryExcel/external/jquery-1.8.2.js"></script>
+    <link href="~/Plug_ing/cpshtml/style/authority/basic_layout.css" rel="stylesheet" type="text/css">
+    <link href="~/Plug_ing/cpshtml/style/authority/common_style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/Plug_ing/cpshtml/style/authority/jquery.fancybox-1.3.4.css" media="screen">
+    <script type="text/javascript" src="~/Plug_ing/cpshtml/scripts/authority/commonAll.js"></script>
+    <script type="text/javascript" src="~/Plug_ing/cpshtml/scripts/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script type="text/javascript" src="~/Plug_ing/cpshtml/scripts/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <script type="text/javascript" src="~/Plug_ing/cpshtml/scripts/artDialog/artDialog.js?skin=default"></script>
+    <script type="text/javascript" src="~/Plug_ing/jQueryExcel/external/jszip.js"></script>
+    <script type="text/javascript" src="~/Plug_ing/jQueryExcel/external/FileSaver.js"></script>
+    <script type="text/javascript" src="~/Plug_ing/jQueryExcel/scripts/excel-gen.js"></script>
+    <script type="text/javascript" src="~/Plug_ing/jQueryExcel/scripts/demo.page.js"></script>
+    <title>瑞熙体检查询系统</title>
+</head>
+
+<body>
+    <form id="submitForm" name="submitForm" action="" method="post">
+        @*<input type="hidden" name="allIDCheck" value="" id="allIDCheck" />
+            <input type="hidden" name="fangyuanEntity.fyXqName" value="" id="fyXqName" />*@
+        <div id="container">
+            <div class="ui_content">
+                <div class="ui_text_indent">
+                    <div id="box_border">
+                        <div id="box_top">登记情况查询</div>
+                        <div id="box_center">
+                            @using (Html.BeginForm())
+                            {
+                                <p>
+                                    开始时间：@Html.TextBoxFor(x => x.KSRiQi)
+                                    结束时间：@Html.TextBoxFor(x => x.JSRiQi)
+                                    @*送检单位：@Html.DropDownListFor(x => x.TJsjdw, new[]
+                                        { new SelectListItem() { Text = "迪安", Value = "01" },
+                                        new SelectListItem(){Text = "华大", Value = "02" } },"---请选择---")*@
+                                </p>
+                            }
+
+                        </div>
+                        <div id="box_bottom">
+                            <input type="button" value="查询" class="ui_input_btn01" onclick="search();" />
+                            <button class="ui_input_btn01" id="generate-excel">导出</button>
+                            @*<input type="button" class="ui_input_btn01" onclick="printout()" value="打印">*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table2Excel">
+                <div class="ui_tb">
+                    <table id="test_table" class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+                        <tr>
+                            <th>体检编号</th>
+                            <th>流水号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>年龄</th>
+                            @*<th>检查项目</th>*@
+                            <th>到检日期</th>
+                            <th>联系电话</th>
+                            <th>体检状态</th>
+                            <th>体检次数</th>
+                            <th>单位编号</th>
+                            <th>体检套餐</th>
+
+                        </tr>
+                        @{
+                            var query = ViewBag.queryList;
+
+                            //string c = null;
+                            foreach (var item in query)
+                            {
+                                <tr>
+                                    <td><span>@item.TJBH</span></td>
+                                    <td><span>@item.DJLSH</span></td>
+                                    <td><span>@item.XM</span></td>
+                                    <td><span>@item.XB</span></td>
+                                    <td><span>@item.NL</span></td>
+                                    @*<td><span>@item.HD_MC</span></td>*@
+                                    <td><span>@item.DJRQ</span></td>
+                                    <td><span>@item.PHONE</span></td>
+                                    <td><span>@item.SUMOVER</span></td>
+                                    <td><span>@item.TJCS</span></td>
+                                    <td><span>@item.DWBH</span></td>
+                                    <td><span>@item.TCMC</span></td>
+                                </tr>
+                            }
+
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+<script>
+
+
+    // 打印具体实现代码
+    function printout() {
+        debugger;
+        var newWindow;
+        //打开一个新的窗口
+        newWindow = window.open();
+        // 是新窗口获得焦点
+        newWindow.focus();
+        //保存写入内容
+        var newContent = "<html><head><meta charset='utf-8'/><title>打印</title></head><body>"
+        newContent += document.getElementById("test_table").outerHTML;
+        newContent += "</body></html>"
+        // 将HTML代码写入新窗口中
+        newWindow.document.write(newContent);
+        newWindow.print();
+        // close layout stream
+        newWindow.document.close();
+        //关闭打开的临时窗口
+        newWindow.close();
+        return false;
+    };
+    /** 模糊查询来电用户  **/
+    function search() {
+        //$("#submitForm").attr("action", "SCTquery.cshtml?page=" + 1).submit();
+        $("#submitForm").attr("action", "CXDJ2").submit();
+    };
+
+</script>

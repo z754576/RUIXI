@@ -1,0 +1,918 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52A32B76-1C0C-4F00-9602-915856953CC8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RXcx03._07</RootNamespace>
+    <AssemblyName>RXcx03.07</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CXxtController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="List\AtriclList.cs" />
+    <Compile Include="List\Common.cs" />
+    <Compile Include="List\Compare.cs" />
+    <Compile Include="List\ExeclPX.cs" />
+    <Compile Include="Models\always_function.cs" />
+    <Compile Include="Models\CDQX.cs" />
+    <Compile Include="Models\CDWH.cs" />
+    <Compile Include="Models\CollectedInfoTable.cs" />
+    <Compile Include="Models\COMPANYJKB.cs" />
+    <Compile Include="Models\COMPANYJKB_GLB.cs" />
+    <Compile Include="Models\CONTORL_DRIVER_INFO.cs" />
+    <Compile Include="Models\data_hospital_fun_pbd.cs" />
+    <Compile Include="Models\DXFZB.cs" />
+    <Compile Include="Models\DXFZ_DX.cs" />
+    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\employee.cs" />
+    <Compile Include="Models\FingerPrintTemplate.cs" />
+    <Compile Include="Models\GGWS_CYRYJBXX.cs" />
+    <Compile Include="Models\GGWS_JDMC.cs" />
+    <Compile Include="Models\GGWS_JHSYXX.cs" />
+    <Compile Include="Models\GGWS_TJZM.cs" />
+    <Compile Include="Models\GZRY.cs" />
+    <Compile Include="Models\hospital.cs" />
+    <Compile Include="Models\HYDWDMB.cs" />
+    <Compile Include="Models\LUOXIANG.cs" />
+    <Compile Include="Models\menu_mbh.cs" />
+    <Compile Include="Models\menu_module.cs" />
+    <Compile Include="Models\messages.cs" />
+    <Compile Include="Models\MIES_CONFIG.cs" />
+    <Compile Include="Models\MIES_JKXXB.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Model2.cs" />
+    <Compile Include="Models\Msgs.cs" />
+    <Compile Include="Models\mushortcut.cs" />
+    <Compile Include="Models\MZ_XTCS.cs" />
+    <Compile Include="Models\OccupationalDiseaseOfSymptoms.cs" />
+    <Compile Include="Models\OccupationalDiseaseSymptoms.cs" />
+    <Compile Include="Models\pbcatedt.cs" />
+    <Compile Include="Models\pbcatfmt.cs" />
+    <Compile Include="Models\pbcatvld.cs" />
+    <Compile Include="Models\PhysicalBase.cs" />
+    <Compile Include="Models\PhysicalDepart.cs" />
+    <Compile Include="Models\PhysicalDetail.cs" />
+    <Compile Include="Models\PublishControl.cs" />
+    <Compile Include="Models\PublishInfo.cs" />
+    <Compile Include="Models\P_OLPay_Back_F2FPayRecord.cs" />
+    <Compile Include="Models\P_OLPay_Back_HasPaymentRecord.cs" />
+    <Compile Include="Models\P_OLPay_Back_SentPlatformRecord.cs" />
+    <Compile Include="Models\QTXTZDB.cs" />
+    <Compile Include="Models\QXKZ.cs" />
+    <Compile Include="Models\REPORTINFO.cs" />
+    <Compile Include="Models\REPORTINFO_HD.cs" />
+    <Compile Include="Models\REPORTTYPE.cs" />
+    <Compile Include="Models\rs_lastcommit.cs" />
+    <Compile Include="Models\rs_threads.cs" />
+    <Compile Include="Models\RYLB.cs" />
+    <Compile Include="Models\RYXX.cs" />
+    <Compile Include="Models\security_apps.cs" />
+    <Compile Include="Models\security_groupings.cs" />
+    <Compile Include="Models\security_info.cs" />
+    <Compile Include="Models\security_template.cs" />
+    <Compile Include="Models\security_users.cs" />
+    <Compile Include="Models\SendEmail.cs" />
+    <Compile Include="Models\SendEmailAttachments.cs" />
+    <Compile Include="Models\SendMsg.cs" />
+    <Compile Include="Models\SEND_DRDC.cs" />
+    <Compile Include="Models\ShortMessage.cs" />
+    <Compile Include="Models\ShortMessageRev.cs" />
+    <Compile Include="Models\ShortMsgModel.cs" />
+    <Compile Include="Models\SRFDZB.cs" />
+    <Compile Include="Models\SurveyPaperCategory.cs" />
+    <Compile Include="Models\SurveyPaperCategoryDetail.cs" />
+    <Compile Include="Models\SurveyPaperInfo.cs" />
+    <Compile Include="Models\SurveyPaperList.cs" />
+    <Compile Include="Models\SurveyQuestion.cs" />
+    <Compile Include="Models\SurveyQuestionOption.cs" />
+    <Compile Include="Models\SurveyReport.cs" />
+    <Compile Include="Models\SurveyReportFactors.cs" />
+    <Compile Include="Models\SurveyUserAnswer.cs" />
+    <Compile Include="Models\SurveyUserRecord.cs" />
+    <Compile Include="Models\sys_code.cs" />
+    <Compile Include="Models\sys_seq.cs" />
+    <Compile Include="Models\sys_user.cs" />
+    <Compile Include="Models\TemplateType.cs" />
+    <Compile Include="Models\TJLS_HYK.cs" />
+    <Compile Include="Models\TJLS_HYXX.cs" />
+    <Compile Include="Models\TJ_BBDJB.cs" />
+    <Compile Include="Models\TJ_BBDJMXB.cs" />
+    <Compile Include="Models\TJ_BBQRB.cs" />
+    <Compile Include="Models\TJ_BBTJ_BZ.cs" />
+    <Compile Include="Models\TJ_BBTJ_CXTJ.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_DWFZJL.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_FKJCHZ.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_GFBTJ.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_JBRYMD.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_JJRYQD.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_NXJBFBQKFX.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_SHXGJBTJFX.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_WJXMHZ.cs" />
+    <Compile Include="Models\TJ_BBTJ_DWTJBG_ZGFJBC.cs" />
+    <Compile Include="Models\TJ_BBTJ_FKZXTJ_FKJCJGHZ.cs" />
+    <Compile Include="Models\TJ_BBTJ_FKZXTJ_ZGFJBC.cs" />
+    <Compile Include="Models\TJ_BBTJ_TJSJ_DWBG_YXHZ.cs" />
+    <Compile Include="Models\TJ_BBTJ_TJSJ_TJRSTJ.cs" />
+    <Compile Include="Models\TJ_BBTJ_TJSJ_TJXMHZ.cs" />
+    <Compile Include="Models\TJ_BBTJ_TJSJ_YXJGHZ.cs" />
+    <Compile Include="Models\TJ_BBTJ_TJSJ_YXJGRYQD_RYXX.cs" />
+    <Compile Include="Models\TJ_BBTJ_TJSJ_YXJGRYQD_XMLB.cs" />
+    <Compile Include="Models\TJ_BBTJ_ZGBB_DZB.cs" />
+    <Compile Include="Models\TJ_CZFZ_DT.cs" />
+    <Compile Include="Models\TJ_CZFZ_HD.cs" />
+    <Compile Include="Models\TJ_CZRZB.cs" />
+    <Compile Include="Models\TJ_DJYYXX.cs" />
+    <Compile Include="Models\TJ_DJYYXX_LOG.cs" />
+    <Compile Include="Models\TJ_DJ_XTCS.cs" />
+    <Compile Include="Models\TJ_DLB.cs" />
+    <Compile Include="Models\TJ_DLB_LOG.cs" />
+    <Compile Include="Models\TJ_DMB_INTERFACE.cs" />
+    <Compile Include="Models\TJ_DMB_ZDYJ.cs" />
+    <Compile Include="Models\TJ_DRDCLOG.cs" />
+    <Compile Include="Models\TJ_DWBXX.cs" />
+    <Compile Include="Models\TJ_DWFZ_DT.cs" />
+    <Compile Include="Models\TJ_DWFZ_DT_LOG.cs" />
+    <Compile Include="Models\TJ_DWFZ_HD.cs" />
+    <Compile Include="Models\TJ_DWFZ_HD_LOG.cs" />
+    <Compile Include="Models\TJ_DWLB.cs" />
+    <Compile Include="Models\TJ_DWTJBG.cs" />
+    <Compile Include="Models\TJ_DWTJBG_ML.cs" />
+    <Compile Include="Models\TJ_DWTJJLB.cs" />
+    <Compile Include="Models\TJ_DWTJJLB_LOG.cs" />
+    <Compile Include="Models\TJ_DWTJYDDJB.cs" />
+    <Compile Include="Models\TJ_DWTJYDDJB_LOG.cs" />
+    <Compile Include="Models\TJ_DWTJYDDJB_ZYB.cs" />
+    <Compile Include="Models\TJ_DWTJYDDJB_ZYB_JWBS.cs" />
+    <Compile Include="Models\TJ_DWTJYDDJB_ZYB_ZYS.cs" />
+    <Compile Include="Models\TJ_DWTJYDDJB_ZYB_ZYS_FS.cs" />
+    <Compile Include="Models\TJ_DW_DJ.cs" />
+    <Compile Include="Models\TJ_DW_ZKB.cs" />
+    <Compile Include="Models\TJ_ETYYZKPGB_NEW.cs" />
+    <Compile Include="Models\TJ_FCTZZYSX.cs" />
+    <Compile Include="Models\TJ_FCXMB.cs" />
+    <Compile Include="Models\TJ_FPXM.cs" />
+    <Compile Include="Models\TJ_FP_CZY.cs" />
+    <Compile Include="Models\TJ_FP_CZY_DT.cs" />
+    <Compile Include="Models\TJ_FWHY.cs" />
+    <Compile Include="Models\TJ_FZJL.cs" />
+    <Compile Include="Models\TJ_FZJL_JCYS.cs" />
+    <Compile Include="Models\TJ_FZMX.cs" />
+    <Compile Include="Models\TJ_FZMX_JCYS.cs" />
+    <Compile Include="Models\TJ_FZTZDY.cs" />
+    <Compile Include="Models\TJ_FZTZXX.cs" />
+    <Compile Include="Models\TJ_GG.cs" />
+    <Compile Include="Models\TJ_GZRY_ZHXM_OPENFACE.cs" />
+    <Compile Include="Models\TJ_HISJK_RYXX.cs" />
+    <Compile Include="Models\TJ_HISJK_RZB.cs" />
+    <Compile Include="Models\TJ_HISJK_XMDZB.cs" />
+    <Compile Include="Models\TJ_HSB_DT.cs" />
+    <Compile Include="Models\TJ_HSB_HD.cs" />
+    <Compile Include="Models\TJ_HSB_HS_DETAIL.cs" />
+    <Compile Include="Models\TJ_HSB_XMDZ.cs" />
+    <Compile Include="Models\TJ_HSB_ZDY_DT.cs" />
+    <Compile Include="Models\TJ_HSB_ZDY_HD.cs" />
+    <Compile Include="Models\TJ_HSB_ZDY_XMDZ.cs" />
+    <Compile Include="Models\TJ_HZKS.cs" />
+    <Compile Include="Models\TJ_INTERFACE.cs" />
+    <Compile Include="Models\TJ_INTERFACE_ZTHX.cs" />
+    <Compile Include="Models\TJ_JBFB_NL.cs" />
+    <Compile Include="Models\TJ_JBFL_DT.cs" />
+    <Compile Include="Models\TJ_JBFL_HD.cs" />
+    <Compile Include="Models\TJ_JBJLB.cs" />
+    <Compile Include="Models\TJ_JBMB_DT.cs" />
+    <Compile Include="Models\TJ_JBMB_HD.cs" />
+    <Compile Include="Models\TJ_JCB.cs" />
+    <Compile Include="Models\TJ_JCXX_TS_LOG.cs" />
+    <Compile Include="Models\TJ_JGXMDZB.cs" />
+    <Compile Include="Models\TJ_JKLOG.cs" />
+    <Compile Include="Models\TJ_JKPG_DZB.cs" />
+    <Compile Include="Models\TJ_JK_DZB.cs" />
+    <Compile Include="Models\TJ_JK_SELECTCOL.cs" />
+    <Compile Include="Models\TJ_JK_SELECTTAB.cs" />
+    <Compile Include="Models\TJ_JK_TJ.cs" />
+    <Compile Include="Models\TJ_JK_TSDZB_DT.cs" />
+    <Compile Include="Models\TJ_JK_TSDZB_HD.cs" />
+    <Compile Include="Models\TJ_JWBS.cs" />
+    <Compile Include="Models\TJ_JYDJB.cs" />
+    <Compile Include="Models\TJ_JYJGB.cs" />
+    <Compile Include="Models\TJ_JYJGBUPDATE.cs" />
+    <Compile Include="Models\TJ_JYJGDR_CS.cs" />
+    <Compile Include="Models\TJ_JYLX.cs" />
+    <Compile Include="Models\TJ_JYNR.cs" />
+    <Compile Include="Models\TJ_JYSDJB.cs" />
+    <Compile Include="Models\TJ_KDJB.cs" />
+    <Compile Include="Models\TJ_KDJ_XMB.cs" />
+    <Compile Include="Models\TJ_KEYWORD.cs" />
+    <Compile Include="Models\TJ_KJLB.cs" />
+    <Compile Include="Models\TJ_KJL_XMB.cs" />
+    <Compile Include="Models\TJ_KLB_DT.cs" />
+    <Compile Include="Models\TJ_KLB_HD.cs" />
+    <Compile Include="Models\TJ_KLB_XMB.cs" />
+    <Compile Include="Models\TJ_KSDLB.cs" />
+    <Compile Include="Models\TJ_KSTX.cs" />
+    <Compile Include="Models\TJ_KSX.cs" />
+    <Compile Include="Models\TJ_KXX.cs" />
+    <Compile Include="Models\TJ_LCLXB.cs" />
+    <Compile Include="Models\TJ_LSSJ_DWBG_YXHZ_STR.cs" />
+    <Compile Include="Models\TJ_LSSJ_YXJGHZ.cs" />
+    <Compile Include="Models\TJ_LSSJ_YXJGRYQD_XMLB.cs" />
+    <Compile Include="Models\TJ_MIES_RYXX.cs" />
+    <Compile Include="Models\TJ_MIES_XMXX.cs" />
+    <Compile Include="Models\TJ_MYPJB.cs" />
+    <Compile Include="Models\TJ_PACSBG.cs" />
+    <Compile Include="Models\TJ_PACSDT.cs" />
+    <Compile Include="Models\TJ_PACSHD.cs" />
+    <Compile Include="Models\TJ_PACSJGB.cs" />
+    <Compile Include="Models\TJ_PACS_TP.cs" />
+    <Compile Include="Models\TJ_QY_DT.cs" />
+    <Compile Include="Models\TJ_QY_HD.cs" />
+    <Compile Include="Models\tj_report_twxminfo.cs" />
+    <Compile Include="Models\TJ_RYLBQXB.cs" />
+    <Compile Include="Models\TJ_SEED.cs" />
+    <Compile Include="Models\TJ_SFCRJ.cs" />
+    <Compile Include="Models\TJ_SFCYJ.cs" />
+    <Compile Include="Models\TJ_SFD.cs" />
+    <Compile Include="Models\TJ_SFD_LOG.cs" />
+    <Compile Include="Models\TJ_SFJSZL.cs" />
+    <Compile Include="Models\TJ_SFLB.cs" />
+    <Compile Include="Models\TJ_SFYRJ.cs" />
+    <Compile Include="Models\TJ_SFYRJ_DT.cs" />
+    <Compile Include="Models\TJ_SFYRJ_FPJL.cs" />
+    <Compile Include="Models\TJ_SFYRJ_SFLB.cs" />
+    <Compile Include="Models\TJ_SFYRJ_SFLX.cs" />
+    <Compile Include="Models\TJ_SJH.cs" />
+    <Compile Include="Models\TJ_SJH_FP.cs" />
+    <Compile Include="Models\TJ_SJH_FPXM.cs" />
+    <Compile Include="Models\TJ_SJH_LOG.cs" />
+    <Compile Include="Models\TJ_SJH_SFLX.cs" />
+    <Compile Include="Models\TJ_SQDLX_DT.cs" />
+    <Compile Include="Models\TJ_SQDLX_HD.cs" />
+    <Compile Include="Models\TJ_SUGGESTION.cs" />
+    <Compile Include="Models\TJ_SZRMYY_JYK.cs" />
+    <Compile Include="Models\TJ_TABLESYNTAX.cs" />
+    <Compile Include="Models\TJ_TC_DT.cs" />
+    <Compile Include="Models\TJ_TC_HD.cs" />
+    <Compile Include="Models\TJ_TJBBLX.cs" />
+    <Compile Include="Models\TJ_TJBGJLMB.cs" />
+    <Compile Include="Models\TJ_TJDJB.cs" />
+    <Compile Include="Models\TJ_TJDJB_JKB.cs" />
+    <Compile Include="Models\TJ_TJDJB_KZ.cs" />
+    <Compile Include="Models\TJ_TJDJB_LOG.cs" />
+    <Compile Include="Models\TJ_TJDLRZB.cs" />
+    <Compile Include="Models\TJ_TJDWBMWH.cs" />
+    <Compile Include="Models\TJ_TJDWDJB.cs" />
+    <Compile Include="Models\TJ_TJJH_DT.cs" />
+    <Compile Include="Models\TJ_TJJH_HD.cs" />
+    <Compile Include="Models\TJ_TJJL.cs" />
+    <Compile Include="Models\TJ_TJJLB.cs" />
+    <Compile Include="Models\TJ_TJJLB_LOG.cs" />
+    <Compile Include="Models\TJ_TJJLB_XGRZ.cs" />
+    <Compile Include="Models\TJ_TJJLMXB.cs" />
+    <Compile Include="Models\TJ_TJJLMXB_LOG.cs" />
+    <Compile Include="Models\TJ_TJLB.cs" />
+    <Compile Include="Models\TJ_TJLXB.cs" />
+    <Compile Include="Models\TJ_TJQXB.cs" />
+    <Compile Include="Models\TJ_TJRYLB.cs" />
+    <Compile Include="Models\TJ_TJXMB.cs" />
+    <Compile Include="Models\TJ_TJXM_JKB.cs" />
+    <Compile Include="Models\TJ_TJYSGL.cs" />
+    <Compile Include="Models\TJ_TJYWLX.cs" />
+    <Compile Include="Models\TJ_TJZKB.cs" />
+    <Compile Include="Models\TJ_TJZTB.cs" />
+    <Compile Include="Models\TJ_TJZTB_DT.cs" />
+    <Compile Include="Models\TJ_TJZT_XJ.cs" />
+    <Compile Include="Models\TJ_TJZT_XJ_LOG.cs" />
+    <Compile Include="Models\TJ_TMBQSZ.cs" />
+    <Compile Include="Models\TJ_TOPZD.cs" />
+    <Compile Include="Models\TJ_TSDZB.cs" />
+    <Compile Include="Models\TJ_TXZD.cs" />
+    <Compile Include="Models\TJ_TXZDJLB.cs" />
+    <Compile Include="Models\TJ_WTMXB.cs" />
+    <Compile Include="Models\TJ_WTZB.cs" />
+    <Compile Include="Models\TJ_XGSFXM.cs" />
+    <Compile Include="Models\TJ_XTSZ_SFZL.cs" />
+    <Compile Include="Models\TJ_YDTJXMB.cs" />
+    <Compile Include="Models\TJ_YDTJXMB_LOG.cs" />
+    <Compile Include="Models\TJ_YGYYDZB.cs" />
+    <Compile Include="Models\TJ_YHPJDAB.cs" />
+    <Compile Include="Models\TJ_YHPJJGB.cs" />
+    <Compile Include="Models\TJ_YHPJWTB.cs" />
+    <Compile Include="Models\TJ_YHPJ_YS.cs" />
+    <Compile Include="Models\TJ_YJSBB.cs" />
+    <Compile Include="Models\TJ_YSXX.cs" />
+    <Compile Include="Models\TJ_YXXMCB.cs" />
+    <Compile Include="Models\TJ_YXXMZB.cs" />
+    <Compile Include="Models\TJ_ZDKS_DZB.cs" />
+    <Compile Include="Models\TJ_ZHXMDZB.cs" />
+    <Compile Include="Models\TJ_ZHXM_DT.cs" />
+    <Compile Include="Models\TJ_ZHXM_HD.cs" />
+    <Compile Include="Models\TJ_ZJJL_JY.cs" />
+    <Compile Include="Models\TJ_ZJJL_JY_LOG.cs" />
+    <Compile Include="Models\TJ_ZJJL_ZS.cs" />
+    <Compile Include="Models\TJ_ZJJL_ZS_LOG.cs" />
+    <Compile Include="Models\TJ_ZJKS_DT.cs" />
+    <Compile Include="Models\TJ_ZJKS_HD.cs" />
+    <Compile Include="Models\TJ_ZJQXB.cs" />
+    <Compile Include="Models\TJ_ZUJJLB.cs" />
+    <Compile Include="Models\TJ_ZUJJLB_LOG.cs" />
+    <Compile Include="Models\TJ_ZUJJL_JY.cs" />
+    <Compile Include="Models\TJ_ZUJJL_JY_LOG.cs" />
+    <Compile Include="Models\TJ_ZUJJL_ZS.cs" />
+    <Compile Include="Models\TJ_ZUJJL_ZS_LOG.cs" />
+    <Compile Include="Models\TJ_ZYBYDDJB.cs" />
+    <Compile Include="Models\TJ_ZYB_DYBG_DT.cs" />
+    <Compile Include="Models\TJ_ZYB_DYBG_HD.cs" />
+    <Compile Include="Models\TJ_ZYB_JCYHYS.cs" />
+    <Compile Include="Models\TJ_ZYB_JWBS.cs" />
+    <Compile Include="Models\TJ_ZYB_JWBS_Temp.cs" />
+    <Compile Include="Models\TJ_ZYB_MBJBB.cs" />
+    <Compile Include="Models\TJ_ZYB_PJJLMX.cs" />
+    <Compile Include="Models\TJ_ZYB_RYXX.cs" />
+    <Compile Include="Models\TJ_ZYB_YHYS_BJXM_GLB.cs" />
+    <Compile Include="Models\TJ_ZYB_YHYS_MBJB_GLB.cs" />
+    <Compile Include="Models\TJ_ZYB_YHYS_TJLB_GLB.cs" />
+    <Compile Include="Models\TJ_ZYB_YHYS_XJXM_GLB.cs" />
+    <Compile Include="Models\TJ_ZYB_YHYS_ZZWX_GLB.cs" />
+    <Compile Include="Models\TJ_ZYB_ZDJY.cs" />
+    <Compile Include="Models\TJ_ZYB_ZYS.cs" />
+    <Compile Include="Models\TJ_ZYB_ZYS_FS.cs" />
+    <Compile Include="Models\TJ_ZYB_ZYS_FS_Temp.cs" />
+    <Compile Include="Models\TJ_ZYB_ZYS_TEMP.cs" />
+    <Compile Include="Models\TJ_ZYB_ZZ.cs" />
+    <Compile Include="Models\TJ_ZYB_ZZZSB.cs" />
+    <Compile Include="Models\TJ_ZYB_ZZ_HD.cs" />
+    <Compile Include="Models\TJ_ZYJKJCZJBG_BZB.cs" />
+    <Compile Include="Models\TJ_ZYS_BM.cs" />
+    <Compile Include="Models\TJ_ZYS_CJ.cs" />
+    <Compile Include="Models\TJ_ZYS_CSHY.cs" />
+    <Compile Include="Models\TJ_ZYS_FHCS.cs" />
+    <Compile Include="Models\TJ_ZYS_FSGZ.cs" />
+    <Compile Include="Models\TJ_ZYS_FSYZL.cs" />
+    <Compile Include="Models\TJ_ZYS_GZ.cs" />
+    <Compile Include="Models\TJ_ZYS_JBDW.cs" />
+    <Compile Include="Models\TJ_ZYS_YHYS.cs" />
+    <Compile Include="Models\TJ_ZYS_ZDBZ.cs" />
+    <Compile Include="Models\TJ_ZYS_ZDDW.cs" />
+    <Compile Include="Models\TJ_ZYTJ_RYXX.cs" />
+    <Compile Include="Models\TJ_ZYTJ_TZ.cs" />
+    <Compile Include="Models\TJ_ZYTJ_WT.cs" />
+    <Compile Include="Models\TJ_ZYTJ_WTMX.cs" />
+    <Compile Include="Models\TJ_ZY_TJJLMXB.cs" />
+    <Compile Include="Models\TTXT_YJMB.cs" />
+    <Compile Include="Models\two_purview.cs" />
+    <Compile Include="Models\tzfl_zdcf.cs" />
+    <Compile Include="Models\USER_DEFINED_PBL.cs" />
+    <Compile Include="Models\USER_DEFINED_REPORT.cs" />
+    <Compile Include="Models\user_group.cs" />
+    <Compile Include="Models\user_master.cs" />
+    <Compile Include="Models\user_purview.cs" />
+    <Compile Include="Models\user_role.cs" />
+    <Compile Include="Models\user_station.cs" />
+    <Compile Include="Models\USER_UPDATE_DATAWINDOW_DATETIME.cs" />
+    <Compile Include="Models\VIEW_DJCX.cs" />
+    <Compile Include="Models\WJ_DAB.cs" />
+    <Compile Include="Models\WJ_DAGLXM.cs" />
+    <Compile Include="Models\WJ_DRDC_DT.cs" />
+    <Compile Include="Models\WJ_DRDC_HD.cs" />
+    <Compile Include="Models\WJ_LOADXML.cs" />
+    <Compile Include="Models\WJ_QUESTIONTYPE.cs" />
+    <Compile Include="Models\WJ_TJDJB.cs" />
+    <Compile Include="Models\WJ_TJJLB.cs" />
+    <Compile Include="Models\WJ_TJJLMXB.cs" />
+    <Compile Include="Models\WJ_TMGLKS.cs" />
+    <Compile Include="Models\WJ_WTB.cs" />
+    <Compile Include="Models\WJ_XGRZ.cs" />
+    <Compile Include="Models\XTGL_TJJGFD.cs" />
+    <Compile Include="Models\XTSJ.cs" />
+    <Compile Include="Models\YYXT_GRYDDJB.cs" />
+    <Compile Include="Models\YYXT_XTCS.cs" />
+    <Compile Include="Models\ZC.cs" />
+    <Compile Include="Models\ZKQXB.cs" />
+    <Compile Include="Models\ZW.cs" />
+    <Compile Include="Models\结果.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Plug_ing\cpshtml\.idea\misc.xml" />
+    <Content Include="Plug_ing\cpshtml\.idea\modules.xml" />
+    <Content Include="Plug_ing\cpshtml\.idea\workspace.xml" />
+    <Content Include="Plug_ing\cpshtml\house_edit.html" />
+    <Content Include="Plug_ing\cpshtml\house_list.html" />
+    <Content Include="Plug_ing\cpshtml\images\authority\+.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\-.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\1.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\11.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\1_add.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\1_close.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\1_open.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\2.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\22.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\2_edit.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\33.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\3_del.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\404.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\act_btn.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\add.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\ajax-loading.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\arrow.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\back.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\bar9.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\bg.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\blank.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\border.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\box_tit_bg.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\closed.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\controls.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\del.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\edt.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancybox-x.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancybox-y.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancybox.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_close.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_loading.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_nav_left.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_nav_right.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_shadow_e.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_shadow_n.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_shadow_ne.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_shadow_nw.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_shadow_s.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_shadow_se.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_shadow_sw.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_shadow_w.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_title_left.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_title_main.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_title_over.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\fancy_title_right.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\first.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\go.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\home.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\last.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\left_tabid_cnt_top.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\left_tab_Selected.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\left_tab_Selectedno.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\left_tt.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\line_conn.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\loading.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\loading_background.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\login_1.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\login_1.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\login_2.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\login_3.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\login_4.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\login_5.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\login_6.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\logo.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\main_12_me.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\main_12_me2.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\minus.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\next.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tableline.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tableline_bottom.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tableline_top.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tablemde.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_03.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_05.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_07.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_12.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_15.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_17.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_18.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_19.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tab_20.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tb.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tdbj.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\tip.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\top.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\top_bg.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\top_bg.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\top_logo.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\authority\top_logo.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\top_tt_bg.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\VerifyCode.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\zTreeStandard.gif" />
+    <Content Include="Plug_ing\cpshtml\images\authority\zTreeStandard.png" />
+    <Content Include="Plug_ing\cpshtml\images\authority\zTreeStandard1.gif" />
+    <Content Include="Plug_ing\cpshtml\images\common\1.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\1_hover.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\2.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\2_hover.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\3.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\3_hover.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\close.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\date.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\logo.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\module_1.png" />
+    <Content Include="Plug_ing\cpshtml\images\common\module_2.png" />
+    <Content Include="Plug_ing\cpshtml\images\common\module_3.png" />
+    <Content Include="Plug_ing\cpshtml\images\common\month.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\nav_hide.png" />
+    <Content Include="Plug_ing\cpshtml\images\common\nav_item_minus.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\nav_item_plus.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\nav_item_v.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\nav_item_v_hover.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\common\nav_show.png" />
+    <Content Include="Plug_ing\cpshtml\images\common\page_close.png" />
+    <Content Include="Plug_ing\cpshtml\images\common\user.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\login\btn.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\login\btn_hover.jpg" />
+    <Content Include="Plug_ing\cpshtml\images\login\login.png" />
+    <Content Include="Plug_ing\cpshtml\images\xngzf\ht01.jpeg" />
+    <Content Include="Plug_ing\cpshtml\images\xngzf\ht02.jpeg" />
+    <Content Include="Plug_ing\cpshtml\index.html" />
+    <Content Include="Plug_ing\cpshtml\introduce.html" />
+    <Content Include="Plug_ing\cpshtml\login.html" />
+    <Content Include="Plug_ing\cpshtml\loupanchart.html" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\artDialog.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\artDialog.source.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\jquery.artDialog.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\jquery.artDialog.source.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\plugins\iframeTools.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\plugins\iframeTools.source.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\aero_s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\aero_s2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_close.hover.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_close.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_e.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_n.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_ne.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_nw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_se.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_sw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_title_icon.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\aero\ie6\aui_w.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\bg.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\bg2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\bg_css3.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\bg_css3_2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\close.hover.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\close.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\e.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\n.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\ne.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\nw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\se.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\sw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\black\ie6\w.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\bg.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\bg2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\bg_css3.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\bg_css3_2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\close.hover.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\close.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\e.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\n.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\ne.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\nw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\se.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\sw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\blue\ie6\w.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\chrome.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\chrome\border.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\chrome\chrome_s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\default.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\bg.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\bg2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\bg_css3.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\bg_css3_2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\color_bg.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\close.hover.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\close.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\e.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\n.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\ne.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\nw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\se.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\sw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\green\ie6\w.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\icons\error.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\icons\face-sad.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\icons\face-smile.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\icons\loading.gif" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\icons\question.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\icons\succeed.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\icons\warning.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\idialog_s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\idialog_s2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_close.hover.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_close.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_e.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_n.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_ne.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_nw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_se.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_sw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\idialog\ie6\aui_w.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_close.hover.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_close.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_e.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_n.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_ne.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_nw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_s.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_se.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_sw.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\ie6\aui_w.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\s1.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\opera\s2.png" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\simple.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\artDialog\skins\twitter.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\authority\commonAll.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\authority\idCardValidate.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\fancybox\jquery.easing-1.3.pack.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\fancybox\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\jquery\jquery-1.4.4.min.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\jquery\jquery-1.7.1.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\jquery\jquery.alerts.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\calendar.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\config.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\lang\en.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Plug_ing\cpshtml\scripts\My97DatePicker\WdatePicker.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\zTree\jquery.ztree.all-3.2.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\zTree\jquery.ztree.all-3.2.min.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\zTree\jquery.ztree.core-3.2.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\zTree\jquery.ztree.core-3.2.min.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\zTree\jquery.ztree.excheck-3.2.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\zTree\jquery.ztree.excheck-3.2.min.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\zTree\jquery.ztree.exedit-3.2.js" />
+    <Content Include="Plug_ing\cpshtml\scripts\zTree\jquery.ztree.exedit-3.2.min.js" />
+    <Content Include="Plug_ing\cpshtml\style\authority\basic_layout.css" />
+    <Content Include="Plug_ing\cpshtml\style\authority\common_style.css" />
+    <Content Include="Plug_ing\cpshtml\style\authority\Copy of zTreeStyle.css" />
+    <Content Include="Plug_ing\cpshtml\style\authority\jquery.fancybox-1.3.4.css" />
+    <Content Include="Plug_ing\cpshtml\style\authority\login_css.css" />
+    <Content Include="Plug_ing\cpshtml\style\authority\main_css.css" />
+    <Content Include="Plug_ing\cpshtml\style\authority\zTreeStyle.css" />
+    <Content Include="Plug_ing\jQueryExcel\css\bootstrap.min.css" />
+    <Content Include="Plug_ing\jQueryExcel\css\demo.css" />
+    <Content Include="Plug_ing\jQueryExcel\css\font-awesome.min.css" />
+    <Content Include="Plug_ing\jQueryExcel\external\FileSaver.js" />
+    <Content Include="Plug_ing\jQueryExcel\external\jquery-1.8.2.js" />
+    <Content Include="Plug_ing\jQueryExcel\external\jszip.js" />
+    <Content Include="Plug_ing\jQueryExcel\index.html" />
+    <Content Include="Plug_ing\jQueryExcel\scripts\demo.page.js" />
+    <Content Include="Plug_ing\jQueryExcel\scripts\excel-gen.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Plug_ing\cpshtml\.idea\cpts_1089_brw.iml" />
+    <Content Include="Plug_ing\jQueryExcel\fonts\fontawesome-webfont.eot" />
+    <Content Include="Plug_ing\jQueryExcel\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Plug_ing\jQueryExcel\fonts\fontawesome-webfont.woff" />
+    <Content Include="Plug_ing\jQueryExcel\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Plug_ing\jQueryExcel\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Plug_ing\jQueryExcel\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Plug_ing\jQueryExcel\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Plug_ing\jQueryExcel\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\CXxt\CXWS.cshtml" />
+    <Content Include="Views\CXxt\CXDJQK.cshtml" />
+    <Content Include="Views\CXxt\CXWS2.cshtml" />
+    <Content Include="Views\CXxt\CXDJ2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Plug_ing\cpshtml\.idea\inspectionProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49321</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49321/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
