@@ -26,5 +26,9 @@ namespace RXcx03._07.Controllers
 
             return View();
         }
+        public ActionResult Tontact()
+        {
+            return View();
+        }
     }
 }

@@ -33,21 +33,18 @@ namespace RXcx03._07.Models
         [StringLength(32)]
         public string 联系方式 { get; set; }
 
-        [StringLength(25)]
+        [StringLength(64)]
         public string 单位编号 { get; set; }
 
         [Key]
-        [Column(Order = 0)]
         public decimal 项目单价 { get; set; }
 
         [StringLength(32)]
         public string 项目名称 { get; set; }
 
-        [StringLength(32)]
+        [StringLength(255)]
         public string 套餐名称 { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
         [StringLength(6)]
         public string 项目编号 { get; set; }
 

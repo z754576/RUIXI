@@ -12,7 +12,9 @@
         {
         }
 
+
         public virtual DbSet<VIEW_DJCX> VIEW_DJCX { get; set; }
+        public virtual DbSet<VIEW_DWYYDJ> VIEW_DWYYDJ { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -63,6 +65,40 @@
 
             modelBuilder.Entity<VIEW_DJCX>()
                 .Property(e => e.外送项目)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DWYYDJ>()
+                .Property(e => e.单位名称)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DWYYDJ>()
+                .Property(e => e.分组名称)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DWYYDJ>()
+                .Property(e => e.预约编号)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DWYYDJ>()
+                .Property(e => e.姓名)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DWYYDJ>()
+                .Property(e => e.性别)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DWYYDJ>()
+                .Property(e => e.电话号码)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DWYYDJ>()
+                .Property(e => e.预登记人)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DWYYDJ>()
+                .Property(e => e.是否到检)
                 .IsUnicode(false);
         }
     }

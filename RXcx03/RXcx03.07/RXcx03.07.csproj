@@ -134,6 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CSYController.cs" />
     <Compile Include="Controllers\CXxtController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -500,6 +501,7 @@
     <Compile Include="Models\user_station.cs" />
     <Compile Include="Models\USER_UPDATE_DATAWINDOW_DATETIME.cs" />
     <Compile Include="Models\VIEW_DJCX.cs" />
+    <Compile Include="Models\VIEW_DWYYDJ.cs" />
     <Compile Include="Models\WJ_DAB.cs" />
     <Compile Include="Models\WJ_DAGLXM.cs" />
     <Compile Include="Models\WJ_DRDC_DT.cs" />
@@ -853,10 +855,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\CXxt\CXWS.cshtml" />
     <Content Include="Views\CXxt\CXDJQK.cshtml" />
     <Content Include="Views\CXxt\CXWS2.cshtml" />
     <Content Include="Views\CXxt\CXDJ2.cshtml" />
+    <Content Include="Views\CXxt\Index.cshtml" />
+    <Content Include="Views\Shared\_MyLayout.cshtml" />
+    <Content Include="Views\Home\Tontact.cshtml" />
+    <Content Include="Views\CXxt\CXWS.cshtml" />
+    <Content Include="Views\CXxt\CXDW.cshtml" />
+    <Content Include="Views\CSY\CXDJ3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

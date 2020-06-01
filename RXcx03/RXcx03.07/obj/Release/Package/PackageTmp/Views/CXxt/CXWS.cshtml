@@ -71,14 +71,13 @@
 
                             foreach (var item in query)
                             {
-                                string a;
-                                if (item.XB == "1") { a = "男"; } else { a = "女"; }
+                                
 
                                 <tr>
                                     <td><span> @item.TJBH</span></td>
                                     <td><span>@item.DJLSH</span></td>
                                     <td><span>@item.XM</span></td>
-                                    <td><span>@a</span></td>
+                                    <td><span>@item.XB</span></td>
                                     <td><span>@item.NL</span></td>
                                     <td><span>@item.HD_MC</span></td>
                                     <td><span>@item.DJRQ</span></td>

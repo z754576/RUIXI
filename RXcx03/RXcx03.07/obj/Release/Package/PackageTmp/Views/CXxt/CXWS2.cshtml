@@ -40,7 +40,9 @@
                                     结束时间：@Html.TextBoxFor(x => x.JSRiQi)
                                     送检单位：@Html.DropDownListFor(x => x.TJsjdw, new[]
                        { new SelectListItem() { Text = "迪安", Value = "01" },
-                       new SelectListItem(){Text = "华大", Value = "02" } },"---请选择---")
+                       new SelectListItem(){Text = "华大", Value = "02" } ,
+                       new SelectListItem(){Text = "新瓜皮", Value = "03" }
+                                    },"---请选择---")
                                 </p>
                             }
                         </div>
@@ -73,7 +75,7 @@
                             {
 
                                 <tr>
-                                    <td><span> @item.TJBH</span></td>
+                                    <td><span>@item.TJBH</span></td>
                                     <td><span>@item.DJLSH</span></td>
                                     <td><span>@item.XM</span></td>
                                     <td><span>@item.XB</span></td>

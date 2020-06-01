@@ -28,9 +28,21 @@ namespace RXcx03._07.Models
         public string SUMOVER { get; set; }
         public string PHONE { get; set; }
         public string DWBH { get; set; }
-        public decimal XMDJ { get; set; }
+        public decimal? XMDJ { get; set; }
         public string XMMC { get; set; }
         public string TCMC { get; set; }
+       
+
+        public string DWCX { get; set; }
+        public string DJCX { get; set; }
+
+        public string DWBH1 {  get; set; }
+        public string TJBH1 { get; set; }
+        public string TCMC1 { get; set; }
+        public DateTime? DJRQ1 { get; set; }
+        public string XB1 { get; set; }
+        public string XM1 { get; set; }
+        public string SFDJ { get; set; }
   
     }
 }

@@ -32,16 +32,19 @@
                 <div class="ui_text_indent">
                     <div id="box_border">
                         <div id="box_top">登记情况查询</div>
+                        
                         <div id="box_center">
                             @using (Html.BeginForm())
                             {
-                                <p>
-                                    开始时间：@Html.TextBoxFor(x => x.KSRiQi)
-                                    结束时间：@Html.TextBoxFor(x => x.JSRiQi)
-                                    @*送检单位：@Html.DropDownListFor(x => x.TJsjdw, new[]
-                                        { new SelectListItem() { Text = "迪安", Value = "01" },
-                                        new SelectListItem(){Text = "华大", Value = "02" } },"---请选择---")*@
-                                </p>
+                            <p>
+                                开始时间：@Html.TextBoxFor(x => x.KSRiQi)
+                                结束时间：@Html.TextBoxFor(x => x.JSRiQi)
+                                @*送检单位：@Html.DropDownListFor(x => x.TJsjdw, new[]
+        { new SelectListItem() { Text = "迪安", Value = "01" },
+        new SelectListItem(){Text = "华大", Value = "02" } },"---请选择---")*@
+                                单位查询:@Html.TextBoxFor(x => x.DWCX)
+                                查询人数：@ViewBag.queryList.Count
+                            </p>
                             }
 
                         </div>
@@ -50,6 +53,10 @@
                             <button class="ui_input_btn01" id="generate-excel">导出</button>
                             @*<input type="button" class="ui_input_btn01" onclick="printout()" value="打印">*@
                         </div>
+                        <div>
+                            @*查询人数：@ViewBag.queryList.Count*@
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -67,7 +74,7 @@
                             <th>联系电话</th>
                             <th>体检状态</th>
                             <th>体检次数</th>
-                            <th>单位编号</th>
+                            <th>单位名称</th>
                             <th>体检套餐</th>
 
                         </tr>

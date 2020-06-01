@@ -15,6 +15,7 @@ namespace RXcx03._07.Controllers
         // GET: CXxt
         public ActionResult Index()
         {
+            
             return View();
         }
         public ActionResult CXWS(AtriclList tiaoJian)
@@ -32,7 +33,7 @@ namespace RXcx03._07.Controllers
         public ActionResult CXWS2(AtriclList tiaoJaian)
         {
 
-            List<AtriclList> list = GETlistWS(tiaoJaian);
+            List<AtriclList> list = GetListws(tiaoJaian);
             ViewBag.queryList = list;
             return View();
         }
@@ -40,7 +41,16 @@ namespace RXcx03._07.Controllers
         {
 
             List<AtriclList> list = GETListDJ(tiaoJaian);
+            //List<AtriclList> list = queryCX();
             ViewBag.queryList = list;
+           
+            return View();
+        }
+        public  ActionResult CXDW(AtriclList tiaoJaian)
+        {
+            List<AtriclList> list = GETListDW(tiaoJaian);
+            ViewBag.queryList = list;
+
             return View();
         }
 
@@ -91,7 +101,7 @@ namespace RXcx03._07.Controllers
                         where a.DJRQ >= tiaoJian.KSRiQi && a.DJRQ <= tiaoJian.JSRiQi
                         //排序
                         //orderby a.CreateTime
-                        select new AtriclList { TJBH = a.TJBH, DJLSH = a.DJLSH, XM = a.XM, XB = a.XB, NL = a.NL, HD_MC = c.MC, DJRQ = a.DJRQ, ZDYM = c.ZDYM, LXBH = b.LXBH };
+                        select new AtriclList { TJBH = a.TJBH, DJLSH = a.DJLSH, XM = a.XM, XB = a.XB,  HD_MC = c.MC, DJRQ = a.DJRQ, ZDYM = c.ZDYM, LXBH = b.LXBH };
             var list = Common.ToList<AtriclList>(query);
 
             return list;
@@ -137,7 +147,10 @@ namespace RXcx03._07.Controllers
             list = list.Distinct<AtriclList>(new Compare()).ToList();
             return list;
         }
-
+        /// <summary>
+        /// 剔除重复后的查询方法
+        /// </summary>
+        /// <returns></returns>
         private List<AtriclList> queryCX()
         {
             Model2 db2 = new Model2();
@@ -158,7 +171,7 @@ namespace RXcx03._07.Controllers
                             ZDYM = a.项目编号,
                             LXBH = a.外送项目,
                             XMDJ = a.项目单价,
-                            XMMC =a.项目名称
+                            XMMC = a.项目名称
                         };
             //对iqueryable重新组合，并查询
 
@@ -166,6 +179,25 @@ namespace RXcx03._07.Controllers
             
 
             return list;           
+        }
+        private List<AtriclList> queryDW()
+        {
+            Model2 db2 = new Model2();
+            var query = from a in db2.VIEW_DWYYDJ
+                        select new AtriclList
+                        {
+                            TJBH1 = a.预约编号,
+                            DWBH1 = a.单位名称,
+                            TCMC1 = a.分组名称,
+                            DJRQ1 = a.体检时间,
+                            XB1 = a.性别,
+                            XM1 = a.姓名,
+                            PHONE = a.电话号码,
+                            SFDJ = a.是否到检
+                        };
+
+            var list = Common.ToList(query);
+            return list;
         }
 
         private List<AtriclList> GETlistWS(AtriclList tiaoJian)
@@ -198,7 +230,7 @@ namespace RXcx03._07.Controllers
                 queryWS = queryWS.Where(m => m.LXBH == k || m.LXBH == f);
             
             var list = Common.ToList(queryWS);
-            list = list.Distinct<AtriclList>(new Compare()).ToList();
+            list = list.Distinct<AtriclList>(new Compare()).ToList(); //这一步好像是去重
             return list;
         }
         private List<AtriclList> GETListDJ(AtriclList tiaoJian)
@@ -213,19 +245,69 @@ namespace RXcx03._07.Controllers
                 // new DateTime(2018, 10, 1)
                 tiaoJian.KSRiQi = DateTime.Today;
             }
-            var queryWS = queryCX().Where(m => m.DJRQ >= tiaoJian.KSRiQi && m.DJRQ <= tiaoJian.JSRiQi);
+            var queryDJ = queryCX().Where(m => m.DJRQ >= tiaoJian.KSRiQi && m.DJRQ <= tiaoJian.JSRiQi);
 
+            if (null != tiaoJian.DWCX)
+                queryDJ = queryDJ.Where(m => m.DWBH == tiaoJian.DWCX);
             //TOLOST
-            var list = Common.ToList(queryWS);
+            var list = Common.ToList(queryDJ);
             //去重复
             list = list.Distinct<AtriclList>(new Compare()).ToList();
             return list;
         }
+        private List<AtriclList> GETListDW(AtriclList tiaoJian)
+        {
+            if (tiaoJian.JSRiQi <= DateTime.MinValue)
+            {
+                tiaoJian.JSRiQi = DateTime.Today.AddDays(+1);
+            }
+            else { tiaoJian.JSRiQi = tiaoJian.JSRiQi.AddDays(+1); }
+            if (tiaoJian.KSRiQi <= DateTime.MinValue)
+            {
+                // new DateTime(2018, 10, 1)
+                tiaoJian.KSRiQi = new DateTime(2018, 10, 1);
+            }
+            var query = queryDW().Where(m => m.DJRQ1 >= tiaoJian.KSRiQi && m.DJRQ1 <= tiaoJian.JSRiQi  || m.DJRQ1 == null);
+
+            if (null != tiaoJian.DWCX)
+                query = query.Where(m => m.DWBH1 == tiaoJian.DWCX);
+            if (null != tiaoJian.DJCX)
+                query = query.Where(m => m.SFDJ == tiaoJian.DJCX);
+            //TOLOST
+            var list = Common.ToList(query);          
+            return list;
+
+        }
 
 
+        private List<AtriclList> GetListws(AtriclList tiaoJian)//增加了第三个查询，取消了去重
+        {
+            if (tiaoJian.JSRiQi <= DateTime.MinValue)
+            {
+                tiaoJian.JSRiQi = DateTime.Today.AddDays(+1);
+            }
+            else { tiaoJian.JSRiQi = tiaoJian.JSRiQi.AddDays(+1); }
+            if (tiaoJian.KSRiQi <= DateTime.MinValue)
+            {
+                // new DateTime(2018, 10, 1)
+                tiaoJian.KSRiQi = DateTime.Today;
+            }
+
+            var queryWS = queryCX().Select(a => new AtriclList { TJBH = a.TJBH, DJLSH = a.DJLSH, XM = a.XM, XB = a.XB, NL = a.NL, DJRQ = a.DJRQ, ZDYM = a.ZDYM, LXBH = a.LXBH, XMMC = a.XMMC });
+
+            //var queryWS = queryCX().Select(a => new AtriclList { TJBH = a.TJBH, DJLSH = a.DJLSH, XM = a.XM, XB = a.XB, DJRQ = a.DJRQ, ZDYM = a.ZDYM, LXBH = a.LXBH, XMMC = a.XMMC });
 
 
+            if (null != tiaoJian)    
+            queryWS = queryWS.Where(m => m.DJRQ >= tiaoJian.KSRiQi && m.DJRQ <= tiaoJian.JSRiQi);
 
+            if(null != tiaoJian.TJsjdw)
+            queryWS = queryWS.Where(m => m.LXBH == tiaoJian.TJsjdw);
+
+            var list = Common.ToList(queryWS);
+            return list;
+        }
+   
         //新增一个类来存这些条件值。。暂时不弄。。。。。
         private void TJcl(AtriclList tiaoJian)
         {
