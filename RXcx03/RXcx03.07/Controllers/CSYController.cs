@@ -28,7 +28,7 @@ namespace RXcx03._07.Controllers
         private List<AtriclList> queryCX()
         {
             Model2 db2 = new Model2();
-            var query = from a in db2.VIEW_DJCX
+            var query = from a in db2.VIEW_DJCX123
                         select new AtriclList
                         {
                             TJBH = a.体检编号,

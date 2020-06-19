@@ -76,6 +76,8 @@
                             <th>体检次数</th>
                             <th>单位名称</th>
                             <th>体检套餐</th>
+                            <th>分组名称</th>
+                            <th>介绍人</th>
 
                         </tr>
                         @{
@@ -84,20 +86,22 @@
                             //string c = null;
                             foreach (var item in query)
                             {
-                                <tr>
-                                    <td><span>@item.TJBH</span></td>
-                                    <td><span>@item.DJLSH</span></td>
-                                    <td><span>@item.XM</span></td>
-                                    <td><span>@item.XB</span></td>
-                                    <td><span>@item.NL</span></td>
-                                    @*<td><span>@item.HD_MC</span></td>*@
-                                    <td><span>@item.DJRQ</span></td>
-                                    <td><span>@item.PHONE</span></td>
-                                    <td><span>@item.SUMOVER</span></td>
-                                    <td><span>@item.TJCS</span></td>
-                                    <td><span>@item.DWBH</span></td>
-                                    <td><span>@item.TCMC</span></td>
-                                </tr>
+                        <tr>
+                            <td><span>@item.TJBH</span></td>
+                            <td><span>@item.DJLSH</span></td>
+                            <td><span>@item.XM</span></td>
+                            <td><span>@item.XB</span></td>
+                            <td><span>@item.NL</span></td>
+                            @*<td><span>@item.HD_MC</span></td>*@
+                            <td><span>@item.DJRQ</span></td>
+                            <td><span>@item.PHONE</span></td>
+                            <td><span>@item.SUMOVER</span></td>
+                            <td><span>@item.TJCS</span></td>
+                            <td><span>@item.DWBH</span></td>
+                            <td><span>@item.TCMC</span></td>
+                            <td><span>@item.FZMC</span></td>
+                            <td><span>@item.JSR</span></td>
+                        </tr>
                             }
 
                         }

@@ -27,11 +27,13 @@ namespace RXcx03._07.Models
         // public Tuple<string,string> TJSJDW { get; set; }
         public string SUMOVER { get; set; }
         public string PHONE { get; set; }
+        public string SFZH { get; set; }
         public string DWBH { get; set; }
         public decimal? XMDJ { get; set; }
         public string XMMC { get; set; }
         public string TCMC { get; set; }
-       
+        public string FZMC { get; set; }
+        public string JSR { get; set; }
 
         public string DWCX { get; set; }
         public string DJCX { get; set; }

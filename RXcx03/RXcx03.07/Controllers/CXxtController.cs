@@ -18,18 +18,7 @@ namespace RXcx03._07.Controllers
             
             return View();
         }
-        public ActionResult CXWS(AtriclList tiaoJian)
-        {
-            ViewBag.queryList = queryWSXM(tiaoJian);
-            ViewBag.JSSJ = tiaoJian.TJsjdw;
-            return View();
-        }
-        public ActionResult CXDJQK(AtriclList tiaoJian)
-        {
-            ViewBag.queryList = queryDJXX(tiaoJian);
-            // ViewBag.JSSJ = tiaoJian.TJsjdw;
-            return View();
-        }
+
         public ActionResult CXWS2(AtriclList tiaoJaian)
         {
 
@@ -37,6 +26,15 @@ namespace RXcx03._07.Controllers
             ViewBag.queryList = list;
             return View();
         }
+
+        public ActionResult CXWS3(AtriclList tiaoJaian)
+        {
+            tiaoJaian.TJsjdw = "10";
+            List<AtriclList> list = GetListws(tiaoJaian);
+            ViewBag.queryList = list;
+            return View();
+        }
+
         public ActionResult CXDJ2(AtriclList tiaoJaian)
         {
 
@@ -54,99 +52,7 @@ namespace RXcx03._07.Controllers
             return View();
         }
 
-        /// <summary>
-        /// 外送项目查询方法
-        /// </summary>
-        /// <param name="tiaoJian"></param>
-        /// <returns></returns> 
-        private List<AtriclList> queryWSXM(AtriclList tiaoJian)
-        {
-            Model1 db = new Model1();
-            //输入或者不输入
-            if (tiaoJian.JSRiQi <= DateTime.MinValue)
-            {
-                tiaoJian.JSRiQi = DateTime.Today.AddDays(+1);
-            }
-            else { tiaoJian.JSRiQi = tiaoJian.JSRiQi.AddDays(+1); }
-            if (tiaoJian.KSRiQi <= DateTime.MinValue)
-            {
-                // new DateTime(2018, 10, 1)
-                tiaoJian.KSRiQi = DateTime.Today;
-            }
-            //双选，单选
-            string k = "01";
-            string f = "02";
-            if (tiaoJian.TJsjdw == k)
-            {
-                k = "01";
-                f = "01";
-            }
-            else if (tiaoJian.TJsjdw == f)
-            {
-                f = "02";
-                k = "02";
-            }
 
-            //类似SQL查询，查询值并存表格
-            var query = from a in db.TJ_TJDJB
-                        join b in db.TJ_TJJLB
-                        on a.TJBH equals b.TJBH
-                        join c in db.TJ_ZHXM_HD
-                        //相同字段关联
-                        on b.TJXMBH equals c.BH
-                        //条件
-                       // where b.LXBH == "06"
-                        //这个做成选项
-                        where c.ZDYM == k || c.ZDYM == f
-                        where a.DJRQ >= tiaoJian.KSRiQi && a.DJRQ <= tiaoJian.JSRiQi
-                        //排序
-                        //orderby a.CreateTime
-                        select new AtriclList { TJBH = a.TJBH, DJLSH = a.DJLSH, XM = a.XM, XB = a.XB,  HD_MC = c.MC, DJRQ = a.DJRQ, ZDYM = c.ZDYM, LXBH = b.LXBH };
-            var list = Common.ToList<AtriclList>(query);
-
-            return list;
-        }
-        /// <summary>
-        /// 登记情况查询
-        /// </summary>
-        /// <returns></returns>
-        private List<AtriclList> queryDJXX(AtriclList tiaoJian)
-        {
-            Model1 db = new Model1();
-            if (tiaoJian.JSRiQi <= DateTime.MinValue)
-            {
-                //在结束时间上+1天
-                tiaoJian.JSRiQi = DateTime.Today.AddDays(+1);
-            }
-            else { tiaoJian.JSRiQi = tiaoJian.JSRiQi.AddDays(+1); }
-            if (tiaoJian.KSRiQi <= DateTime.MinValue)
-            {
-                tiaoJian.KSRiQi = DateTime.Today;
-            }
-
-
-            var query = from c in db.TJ_TJDJB
-                            //where a.DJRQ >=  DateTime.MinValue && a.DJRQ <= DateTime.MaxValue       DWBH = c.DWBH,       TCMC = d.MC ,     
-                        where c.DJRQ >= tiaoJian.KSRiQi && c.DJRQ <= tiaoJian.JSRiQi
-                        select new AtriclList
-                        {
-                            DJLSH = c.DJLSH,
-                            TJBH = c.TJBH,
-                            DJRQ = c.DJRQ,
-                            XM = c.XM,
-                            XB = c.XB,
-                            NL = c.NL,
-                            TJCS = c.TJCS,
-                            SUMOVER = c.SUMOVER,
-                            PHONE = c.PHONE,
-                            DWBH = c.DWBH
-                        };
-
-            var list = Common.ToList(query);
-            // list.Distinct<DJXXList>(new Compare()).ToList().ForEach(S => Console.WriteLine(S.ToString()));
-            list = list.Distinct<AtriclList>(new Compare()).ToList();
-            return list;
-        }
         /// <summary>
         /// 剔除重复后的查询方法
         /// </summary>
@@ -154,7 +60,7 @@ namespace RXcx03._07.Controllers
         private List<AtriclList> queryCX()
         {
             Model2 db2 = new Model2();
-            var query = from a in db2.VIEW_DJCX
+            var query = from a in db2.VIEW_DJCX123
                         select new AtriclList
                         {
                             TJBH = a.体检编号,
@@ -166,12 +72,15 @@ namespace RXcx03._07.Controllers
                             TJCS = a.体检次数,
                             SUMOVER = a.体检状态,
                             PHONE = a.联系方式,
+                            SFZH = a.身份证号,
                             DWBH = a.单位编号,
                             TCMC = a.套餐名称,
+                            FZMC = a.单位分组,
                             ZDYM = a.项目编号,
                             LXBH = a.外送项目,
                             XMDJ = a.项目单价,
-                            XMMC = a.项目名称
+                            XMMC = a.项目名称,
+                            JSR = a.介绍人
                         };
             //对iqueryable重新组合，并查询
 
@@ -293,7 +202,8 @@ namespace RXcx03._07.Controllers
                 tiaoJian.KSRiQi = DateTime.Today;
             }
 
-            var queryWS = queryCX().Select(a => new AtriclList { TJBH = a.TJBH, DJLSH = a.DJLSH, XM = a.XM, XB = a.XB, NL = a.NL, DJRQ = a.DJRQ, ZDYM = a.ZDYM, LXBH = a.LXBH, XMMC = a.XMMC });
+            var queryWS = queryCX().Select(a => new AtriclList { TJBH = a.TJBH, DJLSH = a.DJLSH, XM = a.XM, XB = a.XB, NL = a.NL, DJRQ = a.DJRQ, ZDYM = a.ZDYM, LXBH = a.LXBH, XMMC = a.XMMC,
+            SFZH = a.SFZH,PHONE = a.PHONE,DWBH = a.DWBH});
 
             //var queryWS = queryCX().Select(a => new AtriclList { TJBH = a.TJBH, DJLSH = a.DJLSH, XM = a.XM, XB = a.XB, DJRQ = a.DJRQ, ZDYM = a.ZDYM, LXBH = a.LXBH, XMMC = a.XMMC });
 
