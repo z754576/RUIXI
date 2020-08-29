@@ -16,6 +16,8 @@ namespace RXcx03._07.Models
         public DateTime? DJRQ { get; set; }
         public string ZDYM { get; set; }
         public string LXBH { get; set; }
+        public string TJXJ { get; set; }
+        public string KS { get; set; }
         public int? TJCS { get; set; }
         //条件
         public string XiangMu { get; set; }
@@ -23,6 +25,7 @@ namespace RXcx03._07.Models
         public DateTime KSRiQi { get; set; }
         public DateTime JSRiQi { get; set; }
         public string TJsjdw { get; set; }
+        
 
         // public Tuple<string,string> TJSJDW { get; set; }
         public string SUMOVER { get; set; }
@@ -45,6 +48,11 @@ namespace RXcx03._07.Models
         public string XB1 { get; set; }
         public string XM1 { get; set; }
         public string SFDJ { get; set; }
+
+        public int? WCBZ { get; set; }
+
+        public string JCZT { get; set; }
+        public string BZ { get; set; }
   
     }
 }

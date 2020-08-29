@@ -36,8 +36,8 @@
                             @using (Html.BeginForm())
                             {
                                 <p>
-                                    @*开始时间：@Html.TextBoxFor(x => x.KSRiQi)
-                                    结束时间：@Html.TextBoxFor(x => x.JSRiQi)*@
+                                    开始时间：@Html.TextBoxFor(x => x.KSRiQi)
+                                    结束时间：@Html.TextBoxFor(x => x.JSRiQi)
                                     送检单位：@Html.DropDownListFor(x => x.TJsjdw, new[]
                        { new SelectListItem() { Text = "[○･｀Д´･ ○]", Value = "10" }
                                     },"---请选择---")
@@ -64,6 +64,7 @@
                             <th>年龄</th>
                             <th>手机号</th>
                             <th>检查项目</th>
+                            <th>检查状态</th>
                             <th>体检时间</th>
                             <th>体检ZDYM</th>
                             <th>体检XLBH</th>
@@ -79,11 +80,12 @@
                             <td><span>@item.TJBH</span></td>
                             <td><span>@item.DJLSH</span></td>
                             <td><span>@item.XM</span></td>
-                            <td><span>@item.SFZH</span></td>
+                            <td><span>' @item.SFZH</span></td>
                             <td><span>@item.XB</span></td>
                             <td><span>@item.NL</span></td>
                             <td><span>@item.PHONE</span></td>
                             <td><span>@item.XMMC</span></td>
+                            <td><span>@item.JCZT</span></td>
                             <td><span>@item.DJRQ</span></td>
                             <td><span>@item.ZDYM</span></td>
                             <td><span>@item.LXBH</span></td>

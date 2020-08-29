@@ -1,8 +1,8 @@
 ﻿@model RXcx03._07.Models.AtriclList
-
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
 
 <html>
@@ -20,7 +20,7 @@
     <script type="text/javascript" src="~/Plug_ing/jQueryExcel/external/FileSaver.js"></script>
     <script type="text/javascript" src="~/Plug_ing/jQueryExcel/scripts/excel-gen.js"></script>
     <script type="text/javascript" src="~/Plug_ing/jQueryExcel/scripts/demo.page.js"></script>
-    <title>瑞熙体检单位到检查询</title>
+    <title>瑞熙体检小结查询系统</title>
 </head>
 
 <body>
@@ -31,32 +31,57 @@
             <div class="ui_content">
                 <div class="ui_text_indent">
                     <div id="box_border">
-                        <div id="box_top">登记情况查询</div>
-
+                        <div id="box_top">瑞熙查询系统--小结情况查询</div>
                         <div id="box_center">
                             @using (Html.BeginForm())
                             {
-                                <p>
-                                    开始时间：@Html.TextBoxFor(x => x.KSRiQi)
-                                    结束时间：@Html.TextBoxFor(x => x.JSRiQi)
-                                    是否到检：@Html.DropDownListFor(x => x.DJCX, new[]
-                                        { new SelectListItem() { Text = "已登记", Value = "已登记" },
-                                        new SelectListItem(){Text = "未登记", Value = "未登记" } },"---请选择---")
-                                    单位查询:@Html.TextBoxFor(x => x.DWCX)
-                                    查询人数：@ViewBag.queryList.Count
-                                </p>
-                            }
+                            <p>
+                                开始时间：@Html.TextBoxFor(x => x.KSRiQi)
+                                结束时间：@Html.TextBoxFor(x => x.JSRiQi)
+                                科室：@Html.DropDownListFor(x => x.TJsjdw, new[]
+        { new SelectListItem() { Text = "一般检查", Value = "01    " },
+         new SelectListItem(){Text = "内科", Value = "02    " } ,
+         new SelectListItem(){Text = "病史", Value = "50    " },
+        new SelectListItem(){Text = "外科", Value = "03    " },
+        new SelectListItem(){Text = "耳鼻喉科", Value = "05    " },
+        new SelectListItem(){Text = "妇科", Value = "09    " },
+                      new SelectListItem(){Text = "眼科一室", Value = "53    " },
+                      new SelectListItem(){Text = "眼科二室", Value = "04    " },
+                      new SelectListItem(){Text = "口腔科", Value = "46    " },
+                      new SelectListItem(){Text = "彩超", Value = "23    " },
+                      new SelectListItem(){Text = "放射科", Value = "07    " },
+                      new SelectListItem(){Text = "心电图", Value = "11    " },
+                      new SelectListItem(){Text = "CT", Value = "15    " },
+                      new SelectListItem(){Text = "呼气实验", Value = "49    " },
+                      new SelectListItem(){Text = "TCD", Value = "12    " },
+                      new SelectListItem(){Text = "骨密度", Value = "33    " },
+                      new SelectListItem(){Text = "肺功能", Value = "43    " },
+                      new SelectListItem(){Text = "人体成分", Value = "51    " },
+                      new SelectListItem(){Text = "动脉硬化", Value = "52    " },
+                      new SelectListItem(){Text = "基因检测", Value = "55    " },
+                      new SelectListItem(){Text = "检验科", Value = "06    " },
+                      new SelectListItem(){Text = "HRA", Value = "17    " }
 
+                     },"---请选择---")
+                                完成情况：@Html.DropDownListFor(x => x.DJCX, new[]
+       { new SelectListItem() { Text = "已完成(*^▽^*)", Value = "1" },
+       new SelectListItem(){Text = "未完成┗|｀O′|┛", Value = "0" },
+       new SelectListItem(){Text = "拒检Σ(⊙▽⊙a", Value = "2" }
+                    },"---请选择---")
+
+                                性别：@Html.DropDownListFor(x => x.XB1, new[]
+       { new SelectListItem() { Text = "女♀", Value = "女" },
+       new SelectListItem(){Text = "男♂", Value = "男" }
+                    },"---请选择---")
+
+                            </p>
+                            }
                         </div>
                         <div id="box_bottom">
                             <input type="button" value="查询" class="ui_input_btn01" onclick="search();" />
                             <button class="ui_input_btn01" id="generate-excel">导出</button>
                             @*<input type="button" class="ui_input_btn01" onclick="printout()" value="打印">*@
                         </div>
-                        <div>
-                            @*查询人数：@ViewBag.queryList.Count*@
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -64,32 +89,42 @@
                 <div class="ui_tb">
                     <table id="test_table" class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
                         <tr>
-                            <th>单位名称</th>
-                            <th>分组名称</th>
-                            <th>预约编号</th>
+                            <th>体检编号</th>
+                            <th>流水号</th>
                             <th>姓名</th>
+
                             <th>性别</th>
-                            <th>电话号码</th>
-                            <th>是否到检</th>
-                            <th>预登记日期</th>
-                            <th>体检日期</th>
+                            <th>年龄</th>
+                            <th>科室</th>
+                            <th>检查项目</th>
+                            <th>体检小结</th>
+                            <th>体检时间</th>
+                            <th>检查状态</th>
+                            <th>备注</th>
+
+
+
                         </tr>
                         @{
                             var query = ViewBag.queryList;
 
-                            //string c = null;
                             foreach (var item in query)
                             {
+
                         <tr>
-                            <td><span>@item.DWBH1</span></td>
-                            <td><span>@item.TCMC1</span></td>
-                            <td><span>@item.TJBH1</span></td>
-                            <td><span>@item.XM1</span></td>
-                            <td><span>@item.XB1</span></td>
-                            <td><span>@item.PHONE</span></td>
-                            <td><span>@item.SFDJ</span></td>
-                            <td><span>@item.DJRQ1</span></td>
+                            <td><span>@item.TJBH</span></td>
+                            <td><span>@item.DJLSH</span></td>
+                            <td><span>@item.XM</span></td>
+
+                            <td><span>@item.XB</span></td>
+                            <td><span>@item.NL</span></td>
+                            <td><span>@item.KS</span></td>
+                            <td><span>@item.XMMC</span></td>
+                            <td><span>@item.TJXJ</span></td>
                             <td><span>@item.DJRQ</span></td>
+                            <td><span>@item.JCZT</span></td>
+                            <td><span>@item.BZ</span></td>
+
 
                         </tr>
                             }
@@ -106,7 +141,7 @@
 <script>
 
 
-    // 打印具体实现代码
+   // 打印具体实现代码
     function printout() {
         debugger;
         var newWindow;
@@ -130,7 +165,7 @@
     /** 模糊查询来电用户  **/
     function search() {
         //$("#submitForm").attr("action", "SCTquery.cshtml?page=" + 1).submit();
-        $("#submitForm").attr("action", "CXDW").submit();
+        $("#submitForm").attr("action", "CXXJ").submit();
     };
 
 </script>

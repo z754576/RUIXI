@@ -68,6 +68,7 @@
                             <th>体检时间</th>
                             <th>体检ZDYM</th>
                             <th>体检XLBH</th>
+                            <th>检查状态</th>
                         </tr>
                         @{
                             var query = ViewBag.queryList;
@@ -75,17 +76,18 @@
                             foreach (var item in query)
                             {
 
-                                <tr>
-                                    <td><span>@item.TJBH</span></td>
-                                    <td><span>@item.DJLSH</span></td>
-                                    <td><span>@item.XM</span></td>
-                                    <td><span>@item.XB</span></td>
-                                    <td><span>@item.NL</span></td>
-                                    <td><span>@item.XMMC</span></td>
-                                    <td><span>@item.DJRQ</span></td>
-                                    <td><span>@item.ZDYM</span></td>
-                                    <td><span>@item.LXBH</span></td>
-                                </tr>
+                        <tr>
+                            <td><span>@item.TJBH</span></td>
+                            <td><span>@item.DJLSH</span></td>
+                            <td><span>@item.XM</span></td>
+                            <td><span>@item.XB</span></td>
+                            <td><span>@item.NL</span></td>
+                            <td><span>@item.XMMC</span></td>
+                            <td><span>@item.DJRQ</span></td>
+                            <td><span>@item.ZDYM</span></td>
+                            <td><span>@item.LXBH</span></td>
+                            <td><span>@item.JCZT</span></td>
+                        </tr>
                             }
 
                         }

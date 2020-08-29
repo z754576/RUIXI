@@ -496,6 +496,7 @@
     <Content Include="Views\CXxt\CXDW.cshtml" />
     <Content Include="Views\CSY\CXDJ3.cshtml" />
     <Content Include="Views\CXxt\CXWS3.cshtml" />
+    <Content Include="Views\CXxt\CXXJ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

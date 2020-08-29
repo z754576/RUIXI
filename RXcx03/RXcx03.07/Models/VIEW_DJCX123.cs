@@ -46,6 +46,18 @@ namespace RXcx03._07.Models
         public string 项目名称 { get; set; }
 
         [StringLength(255)]
+        public string 体检小结 { get; set; }
+
+        [StringLength(32)]
+        public string 科室 { get; set; }
+
+        [StringLength(32)]
+        public string 检查状态 { get; set; }
+
+        [StringLength(255)]
+        public string 备注 { get; set; }
+
+        [StringLength(255)]
         public string 单位分组 { get; set; }
 
         [StringLength(32)]

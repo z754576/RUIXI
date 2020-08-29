@@ -143,6 +143,22 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<VIEW_DJCX123>()
+                .Property(e => e.体检小结)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DJCX123>()
+                .Property(e => e.科室)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DJCX123>()
+                .Property(e => e.检查状态)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DJCX123>()
+                .Property(e => e.备注)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIEW_DJCX123>()
                 .Property(e => e.单位分组)
                 .IsUnicode(false);
 
